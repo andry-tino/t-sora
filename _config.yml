@@ -6,20 +6,20 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Calcifer
+title: Sora
 email: andry.tino@hotmail.com
 description: A tutorial for creating your first cross-platform app with Cordova tools in Microsoft Visual Studio 2015
-baseurl: "/t-calcifer" # the subpath of your site, e.g. /blog
+baseurl: "/t-sora" # the subpath of your site, e.g. /blog
 url: "http://andry-tino.github.io" # the base hostname & protocol for your site
 
 author_url: "https://github.com/andry-tino"
 author: Andrea Tino
 
-repo_name: t-calcifer
-repo_url: "https://github.com/andry-tino/t-calcifer"
-repo_zip_url: "https://github.com/andry-tino/t-calcifer/zipball/master"
-repo_tar_url: "https://github.com/andry-tino/t-calcifer/tarball/master"
-repo_fork_url: "https://github.com/andry-tino/t-calcifer"
+repo_name: t-sora
+repo_url: "https://github.com/andry-tino/t-sora"
+repo_zip_url: "https://github.com/andry-tino/t-sora/zipball/master"
+repo_tar_url: "https://github.com/andry-tino/t-sora/tarball/master"
+repo_fork_url: "https://github.com/andry-tino/t-sora"
 
 twitter_username: _atino
 github_username:  andry-tino
