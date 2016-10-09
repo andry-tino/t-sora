@@ -1,0 +1,351 @@
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700italic,700);
+
+body {
+  background-color: #fff;
+  padding:50px;
+  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color:#727272;
+  font-weight:400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color:#222;
+  margin: 0 0 20px;
+}
+
+p, ul, ol, table, dl {
+  margin: 0 0 20px;
+}
+
+pre table {
+  margin-bottom: 0;
+}
+
+p.project-info {
+  margin: 0 0 10px;
+}
+
+h1, h2, h3 {
+  line-height:1.1;
+}
+
+h1 {
+  font-size:28px;
+}
+
+h2 {
+  color:#393939;
+}
+
+h3, h4, h5, h6 {
+  color:#494949;
+}
+
+a {
+  color:#39c;
+  text-decoration:none;
+}
+
+a:hover {
+  color:#069;
+}
+
+a small {
+  font-size:11px;
+  color:#777;
+  margin-top:-0.3em;
+  display:block;
+}
+
+a:hover small {
+  color:#777;
+}
+
+.wrapper {
+  width:860px;
+  margin:0 auto;
+}
+
+blockquote {
+  border-left:1px solid #e5e5e5;
+  margin:0;
+  padding:0 0 0 20px;
+  font-style:italic;
+}
+
+code, 
+figure > pre {
+  font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  color:#333;
+  font-size:12px;
+}
+
+figure > pre {
+  margin: 0 0 20px;
+  padding:8px 15px;
+  background: #f8f8f8;
+  border-radius:5px;
+  border:1px solid #e5e5e5;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+pre table {
+  width: auto;
+}
+
+th, td {
+  text-align: left;
+  padding: 5px 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+pre th,
+pre td {
+  padding: 0 10px;
+  border: none;
+}
+
+dt {
+  color:#444;
+  font-weight:700;
+}
+
+th {
+  color:#444;
+}
+
+img {
+  max-width:100%;
+}
+
+footer ul.social-media-list {
+  list-style: none;
+  margin-left: 0;
+ }
+ 
+footer .icon > svg {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+footer .icon > svg path {
+  fill: #828282;
+}
+
+header.post-header {
+  width: 100%;
+  position: static;
+}
+
+header {
+  width:270px;
+  float:left;
+  position:fixed;
+  -webkit-font-smoothing:subpixel-antialiased;
+}
+
+header ul.download-chimes {
+  height:40px;
+  padding:0;
+  background: #f4f4f4;
+  border-radius:5px;
+  border:1px solid #e0e0e0;
+  width:270px;
+  margin-left: 0;
+}
+
+header ul {
+  list-style:none;
+  background: transparent;
+  border-radius: 0;
+  border-width: 0;
+  margin-left: 10px;
+  padding: 0;
+}
+
+header > h1 > a {
+  color: #222222;
+}
+
+header .social-media {
+  margin-top: 5px;
+}
+
+header .table-contents {
+  overflow-y: auto;
+  max-height: 75px;
+  margin-bottom: 30px;
+}
+
+header .table-contents li a {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 200px;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+header .view {
+  margin: 0 0 20px;
+}
+
+.icon {
+  margin-right: 1px;
+  vertical-align: middle;
+}
+
+header ul.download-chimes li {
+  width:89px;
+  float:left;
+  border-right:1px solid #e0e0e0;
+  height:40px;
+}
+
+header ul.download-chimes li:first-child a {
+  border-radius:5px 0 0 5px;
+}
+
+header ul.download-chimes li:last-child a {
+  border-radius:0 5px 5px 0;
+}
+
+header ul.download-chimes a {
+  line-height:1;
+  font-size:11px;
+  color:#999;
+  display:block;
+  text-align:center;
+  padding-top:6px;
+  height:34px;
+}
+
+header ul.download-chimes a:hover {
+  color:#999;
+}
+header ul.download-chimes a:active {
+  background-color:#f0f0f0;
+}
+
+strong {
+  color:#222;
+  font-weight:700;
+}
+
+header ul.download-chimes li + li + li {
+  border-right:none;
+  width:89px;
+}
+
+header ul.download-chimes a strong {
+  font-size:14px;
+  display:block;
+  color:#222;
+}
+
+section {
+  width:500px;
+  float:right;
+  padding-bottom:50px;
+}
+
+small {
+  font-size:11px;
+}
+
+hr {
+  border:0;
+  background:#e5e5e5;
+  height:1px;
+  margin:0 0 20px;
+}
+
+footer {
+  width:270px;
+  float:left;
+  position:fixed;
+  bottom:50px;
+  -webkit-font-smoothing:subpixel-antialiased;
+}
+
+@media print, screen and (max-width: 960px) {
+
+  div.wrapper {
+    width:auto;
+    margin:0;
+  }
+
+  header, section, footer {
+    float:none;
+    position:static;
+    width:auto;
+  }
+
+  header {
+    padding-right:320px;
+  }
+
+  section {
+    border:1px solid #e5e5e5;
+    border-width:1px 0;
+    padding:20px 0;
+    margin:0 0 20px;
+  }
+
+  header a small {
+    display:inline;
+  }
+
+  header ul.download-chimes {
+    position:absolute;
+    right:50px;
+    top:52px;
+  }
+}
+
+@media print, screen and (max-width: 720px) {
+  body {
+    word-wrap:break-word;
+  }
+
+  header {
+    padding:0;
+  }
+
+  header ul.download-chimes, header p.view {
+    position:static;
+  }
+
+  code,
+  figure > pre {
+    word-wrap:normal;
+  }
+}
+
+@media print, screen and (max-width: 480px) {
+  body {
+    padding:15px;
+  }
+
+  header ul.download-chimes {
+    width:99%;
+  }
+
+  header ul.download-chimes li, 
+  header ul.download-chimes li + li + li {
+    width:33%;
+  }
+}
+
+@media print {
+  body {
+    padding:0.4in;
+    font-size:12pt;
+    color:#444;
+  }
+}

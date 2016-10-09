@@ -1,0 +1,29 @@
+<header>
+  <h1><a href="{{ site.url }}{{ site.baseurl }}">{{ site.title }}</a></h1>
+  <p>{{ site.description }}</p>
+  
+  <ul class="table-contents">
+    {% for post in site.categories.post %}
+      <li>
+        <span class="material-icons icon">&#xE866;</span>
+        <a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+  </ul>
+  
+  <div class="view">
+    <a href="{{ site.repo_url }}">
+      View the Project on GitHub 
+      <small>{{ site.github_username }}/{{ site.repo_name }}</small>
+    </a>
+    <div class="social-media">
+      {% include socialmedia.html %}
+    </div>
+  </div>
+  
+  <ul class="download-chimes">
+    <li><a href="{{ site.repo_zip_url }}">Download <strong>ZIP File</strong></a></li>
+    <li><a href="{{ site.repo_tar_url }}">Download <strong>TAR Ball</strong></a></li>
+    <li><a href="{{ site.repo_fork_url }}">Fork On <strong>GitHub</strong></a></li>
+  </ul>
+</header>
