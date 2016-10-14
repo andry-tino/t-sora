@@ -349,3 +349,8 @@ footer {
     color:#444;
   }
 }
+
+/* Making social share buttons round corner */
+.social-media a["data-url"] {
+  border-radius: 6px;
+}
