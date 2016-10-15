@@ -106,9 +106,9 @@ sora.planets.earth = {
                 contextResult.putImageData(dataResult,0,0)	
                 material.map.needsUpdate = true;
             })
-            imageTrans.src	= sora.planets.earth.urlToImagesFromIndex + 'images/earthcloudmaptrans.jpg';
+            imageTrans.src	= sora.planets.earth.urlToImagesFromIndex + 'earthcloudmaptrans.jpg';
         }, false);
-        imageMap.src	= sora.planets.earth.urlToImagesFromIndex + 'images/earthcloudmap.jpg';
+        imageMap.src	= sora.planets.earth.urlToImagesFromIndex + 'earthcloudmap.jpg';
 
         var geometry	= new THREE.SphereGeometry(0.51, 32, 32)
         var material	= new THREE.MeshPhongMaterial({
