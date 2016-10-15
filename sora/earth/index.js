@@ -40,7 +40,7 @@ window.addEventListener("load", function() {
 	light.shadowMapHeight = 1024;
 	
 	// Add startfield
-	var starSphere	= THREEx.Planets.createStarfield();
+    var starSphere = sora.starfield.createMesh();
 	scene.add(starSphere);
 
 	// Add object and make it move
@@ -50,33 +50,34 @@ window.addEventListener("load", function() {
 	containerEarth.rotateZ(-23.4 * Math.PI/180);
 	containerEarth.position.z = 0;
 	scene.add(containerEarth);
-	var moonMesh = THREEx.Planets.createMoon();
+
+    var moonMesh = sora.planets.earth.createMoonMesh();
 	moonMesh.position.set(0.5, 0.5, 0.5);
 	moonMesh.scale.multiplyScalar(1/5);
 	moonMesh.receiveShadow = true;
 	moonMesh.castShadow	= true;
 	containerEarth.add(moonMesh);
 
-	var earthMesh	= THREEx.Planets.createEarth()
-	earthMesh.receiveShadow	= true
-	earthMesh.castShadow	= true
-	containerEarth.add(earthMesh)
-	onRenderFcts.push(function(delta, now){
+    var earthMesh = sora.planets.earth.createMesh();
+	earthMesh.receiveShadow	= true;
+	earthMesh.castShadow	= true;
+	containerEarth.add(earthMesh);
+	onRenderFcts.push(function(delta, now) {
 		earthMesh.rotation.y += 1/32 * delta;		
-	})
+	});
 
 	var geometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var material = THREEx.createAtmosphereMaterial();
+    var material = sora.shader.createAtmosphereMaterial();
 	material.uniforms.glowColor.value.set(0x00b3ff);
 	material.uniforms.coeficient.value = 0.8;
 	material.uniforms.power.value = 2.0;
 	var mesh = new THREE.Mesh(geometry, material );
 	mesh.scale.multiplyScalar(1.01);
 	containerEarth.add(mesh);
-	// new THREEx.addAtmosphereMaterial2DatGui(material, datGUI);
+    // new sora.shader.addAtmosphereMaterial2DatGui(material, datGUI);
 
 	var geometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var material = THREEx.createAtmosphereMaterial();
+    var material = sora.shader.createAtmosphereMaterial();
 	material.side = THREE.BackSide;
 	material.uniforms.glowColor.value.set(0x00b3ff);
 	material.uniforms.coeficient.value = 0.5;
@@ -84,9 +85,9 @@ window.addEventListener("load", function() {
 	var mesh = new THREE.Mesh(geometry, material);
 	mesh.scale.multiplyScalar(1.15);
 	containerEarth.add(mesh);
-	// new THREEx.addAtmosphereMaterial2DatGui(material, datGUI);
+	// new sora.shader.addAtmosphereMaterial2DatGui(material, datGUI);
 
-	var earthCloud = THREEx.Planets.createEarthCloud();
+    var earthCloud = sora.planets.earth.createCloudMesh();
 	earthCloud.receiveShadow = true;
 	earthCloud.castShadow = true;
 	containerEarth.add(earthCloud);
