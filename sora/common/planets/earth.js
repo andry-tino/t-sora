@@ -17,7 +17,7 @@ sora.planets.earth = {
      * URL leading to the images folder from the index file running the application. 
      * This must include the final slash character.
      */
-    urlToImagesFromIndex: "./images/",
+    urlToImagesFromIndex: "../images/",
 
     /**
      * Creates the mesh for the Earth.
