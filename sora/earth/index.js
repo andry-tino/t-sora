@@ -44,8 +44,6 @@ window.addEventListener("load", function() {
 	scene.add(starSphere);
 
 	// Add object and make it move
-    // var datGUI = new dat.GUI();
-
 	var containerEarth = new THREE.Object3D();
 	containerEarth.rotateZ(-23.4 * Math.PI/180);
 	containerEarth.position.z = 0;
@@ -60,7 +58,7 @@ window.addEventListener("load", function() {
 
     var earthMesh = sora.planets.earth.createMesh();
 	earthMesh.receiveShadow	= true;
-	earthMesh.castShadow	= true;
+	earthMesh.castShadow = true;
 	containerEarth.add(earthMesh);
 	onRenderFcts.push(function(delta, now) {
 		earthMesh.rotation.y += 1/32 * delta;		
@@ -71,10 +69,9 @@ window.addEventListener("load", function() {
 	material.uniforms.glowColor.value.set(0x00b3ff);
 	material.uniforms.coeficient.value = 0.8;
 	material.uniforms.power.value = 2.0;
-	var mesh = new THREE.Mesh(geometry, material );
+	var mesh = new THREE.Mesh(geometry, material);
 	mesh.scale.multiplyScalar(1.01);
 	containerEarth.add(mesh);
-    // new sora.shader.addAtmosphereMaterial2DatGui(material, datGUI);
 
 	var geometry = new THREE.SphereGeometry(0.5, 32, 32);
     var material = sora.shader.createAtmosphereMaterial();
@@ -85,7 +82,6 @@ window.addEventListener("load", function() {
 	var mesh = new THREE.Mesh(geometry, material);
 	mesh.scale.multiplyScalar(1.15);
 	containerEarth.add(mesh);
-	// new sora.shader.addAtmosphereMaterial2DatGui(material, datGUI);
 
     var earthCloud = sora.planets.earth.createCloudMesh();
 	earthCloud.receiveShadow = true;
