@@ -14,6 +14,12 @@ sora.planets = sora.planets || {};
  */
 sora.planets.earth = {
     /**
+     * URL leading to the images folder from the index file running the application. 
+     * This must include the final slash character.
+     */
+    urlToImagesFromIndex: "./images/",
+
+    /**
      * Creates the mesh for the Earth.
      * @return {THREE.Mesh} The THREE Mesh object for the Earth.
      */
@@ -23,10 +29,10 @@ sora.planets.earth = {
 
         // Define material
         var material = new THREE.MeshPhongMaterial({
-            map         : THREE.ImageUtils.loadTexture(THREEx.Planets.baseURL + "images/earthmap1k.jpg"),
-            bumpMap	    : THREE.ImageUtils.loadTexture(THREEx.Planets.baseURL + "images/earthbump1k.jpg"),
+            map         : THREE.ImageUtils.loadTexture(sora.planets.earth.urlToImagesFromIndex + "earthmap1k.jpg"),
+            bumpMap	    : THREE.ImageUtils.loadTexture(sora.planets.earth.urlToImagesFromIndex + "earthbump1k.jpg"),
             bumpScale   : 0.05,
-            specularMap : THREE.ImageUtils.loadTexture(THREEx.Planets.baseURL + "images/earthspec1k.jpg"),
+            specularMap : THREE.ImageUtils.loadTexture(sora.planets.earth.urlToImagesFromIndex + "earthspec1k.jpg"),
             specularMap : new THREE.Color("grey")
         });
 
@@ -42,8 +48,8 @@ sora.planets.earth = {
 
         // Define material
         var material = new THREE.MeshPhongMaterial({
-            map	        : THREE.ImageUtils.loadTexture(THREEx.Planets.baseURL + "images/moonmap1k.jpg"),
-            bumpMap	    : THREE.ImageUtils.loadTexture(THREEx.Planets.baseURL + "images/moonbump1k.jpg"),
+            map	        : THREE.ImageUtils.loadTexture(sora.planets.earth.urlToImagesFromIndex + "moonmap1k.jpg"),
+            bumpMap	    : THREE.ImageUtils.loadTexture(sora.planets.earth.urlToImagesFromIndex + "moonbump1k.jpg"),
             bumpScale   : 0.002
         });
 
@@ -100,9 +106,9 @@ sora.planets.earth = {
                 contextResult.putImageData(dataResult,0,0)	
                 material.map.needsUpdate = true;
             })
-            imageTrans.src	= THREEx.Planets.baseURL+'images/earthcloudmaptrans.jpg';
+            imageTrans.src	= sora.planets.earth.urlToImagesFromIndex + 'images/earthcloudmaptrans.jpg';
         }, false);
-        imageMap.src	= THREEx.Planets.baseURL+'images/earthcloudmap.jpg';
+        imageMap.src	= sora.planets.earth.urlToImagesFromIndex + 'images/earthcloudmap.jpg';
 
         var geometry	= new THREE.SphereGeometry(0.51, 32, 32)
         var material	= new THREE.MeshPhongMaterial({
