@@ -7,6 +7,7 @@
  */
 
 window.addEventListener("load", function() {
+    // Creating the renderer
     var renderer = new THREE.WebGLRenderer({
 		antialias : true
 	});
@@ -15,6 +16,8 @@ window.addEventListener("load", function() {
 	renderer.shadowMapEnabled = true;
 	
 	var onRenderFcts = [];
+
+    // Creating the scene
 	var scene = new THREE.Scene();
 	var camera	= new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 100);
 	camera.position.z = 1;

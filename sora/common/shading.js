@@ -13,50 +13,10 @@ var sora = sora || {};
  */
 sora.shader = {
     /**
-     * 
-     */
-    addAtmosphereMaterial2DatGui: function(material, datGui) {
-        datGui = datGui || new dat.GUI()
-        var uniforms	= material.uniforms
-        // options
-        var options  = {
-            coeficient	: uniforms["coeficient"].value,
-            power		: uniforms["power"].value,
-            glowColor	: "#"+uniforms.glowColor.value.getHexString(),
-            presetFront	: function(){
-                options.coeficient	= 1
-                options.power		= 2
-                onChange()
-            },
-            presetBack	: function(){
-                options.coeficient	= 0.5
-                options.power		= 4.0
-                onChange()
-            },
-        }
-        var onChange = function(){
-            uniforms["coeficient"].value	= options.coeficient
-            uniforms["power"].value		= options.power
-            uniforms.glowColor.value.set( options.glowColor ); 
-        }
-        onChange()
-        
-        // config datGui
-        datGui.add( options, "coeficient"	, 0.0 , 2)
-            .listen().onChange( onChange )
-        datGui.add( options, "power"		, 0.0 , 30)
-            .listen().onChange( onChange )
-        datGui.addColor( options, "glowColor" )
-            .listen().onChange( onChange )
-        datGui.add( options, "presetFront" )
-        datGui.add( options, "presetBack" )
-    },
-
-    /**
-     * 
+     * Creates the atmosphere material.
      */
     createAtmosphereMaterial: function() {
-        var vertexShader	= [
+        var vertexShader = [
             "varying vec3	vVertexWorldPosition;",
             "varying vec3	vVertexNormal;",
 
@@ -69,8 +29,9 @@ sora.shader = {
             "	gl_Position	= projectionMatrix * modelViewMatrix * vec4(position, 1.0);",
             "}",
 
-            ].join("\n")
-        var fragmentShader	= [
+            ].join("\n");
+
+        var fragmentShader = [
             "uniform vec3	glowColor;",
             "uniform float	coeficient;",
             "uniform float	power;",
@@ -85,32 +46,32 @@ sora.shader = {
             "	float intensity		= pow(coeficient + dot(vVertexNormal, viewCameraToVertex), power);",
             "	gl_FragColor		= vec4(glowColor, intensity);",
             "}",
-        ].join("\n")
+        ].join("\n");
 
         // create custom material from the shader code above
         //   that is within specially labeled script tags
-        var material	= new THREE.ShaderMaterial({
+        // Those are changed by the code
+        var material = new THREE.ShaderMaterial({
             uniforms: { 
-                coeficient	: {
+                coeficient: {
                     type	: "f", 
                     value	: 1.0
                 },
-                power		: {
+                power: {
                     type	: "f",
-                    value	: 2
+                    value	: 2.0
                 },
-                glowColor	: {
+                glowColor: {
                     type	: "c",
-                    value	: new THREE.Color("pink")
+                    value	: new THREE.Color("blue")
                 },
             },
             vertexShader	: vertexShader,
             fragmentShader	: fragmentShader,
-            //blending	: THREE.AdditiveBlending,
             transparent	: true,
             depthWrite	: false,
         });
-        
-        return material
+
+        return material;
     }
 };
