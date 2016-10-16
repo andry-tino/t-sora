@@ -6,7 +6,7 @@
 var sora = sora || {};
 
 /**
- * Starfield.
+ * Defines the background starfield.
  */
 sora.starfield = {
     /**
@@ -21,11 +21,11 @@ sora.starfield = {
     createMesh: function() {
         var texture	= THREE.ImageUtils.loadTexture(sora.starfield.urlToImagesFromIndex + "galaxy_starfield.png");
         var material = new THREE.MeshBasicMaterial({
-            map	: texture,
-            side : THREE.BackSide
+            map	    : texture,
+            side    : THREE.BackSide
         });
         
-        var geometry = new THREE.SphereGeometry(100, 32, 32);
+        var geometry = new THREE.SphereGeometry(100, 32, 32); /* (radius, segmentWidth, segmentHeight) */
         var mesh = new THREE.Mesh(geometry, material);
         
         return mesh;
