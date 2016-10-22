@@ -74,5 +74,26 @@ sora.utils = {
         var mesh = new THREE.Mesh(geometry, material);
 
         return mesh;
+    },
+
+    /**
+     * Executes the animation.
+     * @param onRenderFct {array} The array of callbacks to execute.
+     */
+    performAnimation: function (onRenderFcts) {
+        var lastTimeMsec = null;
+
+        window.requestAnimationFrame(function animate(nowMsec) {
+            // Keep looping
+            window.requestAnimationFrame(animate);
+            // Measure time
+            lastTimeMsec = lastTimeMsec || nowMsec - 1000 / 60;
+            var deltaMsec = Math.min(200, nowMsec - lastTimeMsec);
+            lastTimeMsec = nowMsec;
+            // Call each update function
+            onRenderFcts.forEach(function (onRenderFct) {
+                onRenderFct(deltaMsec / 1000, nowMsec / 1000);
+            });
+        });
     }
 };

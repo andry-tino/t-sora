@@ -123,18 +123,6 @@ window.addEventListener("load", function () {
 		renderer.render(scene, camera);
 	})
 
-	// Loop runner
-	var lastTimeMsec = null;
-	requestAnimationFrame(function animate(nowMsec) {
-		// Keep looping
-		requestAnimationFrame(animate);
-		// Measure time
-		lastTimeMsec = lastTimeMsec || nowMsec - 1000 / 60;
-		var deltaMsec = Math.min(200, nowMsec - lastTimeMsec);
-		lastTimeMsec = nowMsec;
-		// Call each update function
-		onRenderFcts.forEach(function (onRenderFct) {
-			onRenderFct(deltaMsec / 1000, nowMsec / 1000);
-		});
-	});
+	// Initiating the animation
+	sora.utils.performAnimation(onRenderFcts);
 });
