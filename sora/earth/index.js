@@ -23,10 +23,10 @@ window.addEventListener("load", function () {
 	// Creating the scene and a camera
 	var scene = new THREE.Scene();
 	var camera = new THREE.PerspectiveCamera(
-		45, 									/* Camera frustum */
+		45,                                     /* Camera frustum */
 		window.innerWidth / window.innerHeight,	/* Camera frustum aspect ratio */
-		0.01, 									/* Camera frustum near plane */
-		100										/* Camera frustum far plane */
+		0.01,                                   /* Camera frustum near plane */
+		100                                     /* Camera frustum far plane */
 	);
 	camera.position.z = 1; /* Set the camera to be 1 unit high from the base plane */
 
