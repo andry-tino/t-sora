@@ -24,17 +24,17 @@ sora.planets.earth = {
      * Creates the mesh for the Earth.
      * @return {THREE.Mesh} The THREE Mesh object for the Earth.
      */
-    createMesh: function() {
+    createMesh: function () {
         // Create a sphere
         var geometry = new THREE.SphereGeometry(0.5, 32, 32); /* (radius, segmentWidth, segmentHeight) */
 
         // Define material
         var loader = new THREE.TextureLoader();
         var material = new THREE.MeshPhongMaterial({
-            map         : loader.load(sora.planets.earth.urlToImagesFromIndex + "earthmap1k.jpg"),
-            bumpMap	    : loader.load(sora.planets.earth.urlToImagesFromIndex + "earthbump1k.jpg"),
-            bumpScale   : 0.05, /* Bump scale factor */
-            specularMap : loader.load(sora.planets.earth.urlToImagesFromIndex + "earthspec1k.jpg")
+            map: loader.load(sora.planets.earth.urlToImagesFromIndex + "earthmap1k.jpg"),
+            bumpMap: loader.load(sora.planets.earth.urlToImagesFromIndex + "earthbump1k.jpg"),
+            bumpScale: 0.05, /* Bump scale factor */
+            specularMap: loader.load(sora.planets.earth.urlToImagesFromIndex + "earthspec1k.jpg")
         });
 
         // Generate final mesh
@@ -47,16 +47,16 @@ sora.planets.earth = {
      * Creates the mesh for the Moon.
      * @return {THREE.Mesh} The THREE Mesh object for the Earth.
      */
-    createMoonMesh: function() {
+    createMoonMesh: function () {
         // Create a sphere
         var geometry = new THREE.SphereGeometry(0.5, 32, 32); /* (radius, segmentWidth, segmentHeight) */
 
         // Define material
         var loader = new THREE.TextureLoader();
         var material = new THREE.MeshPhongMaterial({
-            map	        : loader.load(sora.planets.earth.urlToImagesFromIndex + "moonmap1k.jpg"),
-            bumpMap	    : loader.load(sora.planets.earth.urlToImagesFromIndex + "moonbump1k.jpg"),
-            bumpScale   : 0.002 /* Bump scale factor */
+            map: loader.load(sora.planets.earth.urlToImagesFromIndex + "moonmap1k.jpg"),
+            bumpMap: loader.load(sora.planets.earth.urlToImagesFromIndex + "moonbump1k.jpg"),
+            bumpScale: 0.002 /* Bump scale factor */
         });
 
         // Generate final mesh
@@ -69,9 +69,9 @@ sora.planets.earth = {
      * Creates the mesh for the cloud.
      * @return {THREE.Mesh} The THREE Mesh object for the cloud.
      */
-    createCloudMesh: function() {
+    createCloudMesh: function () {
         return sora.utils.createCloudMesh(
-            sora.planets.earth.urlToImagesFromIndex + "earthcloudmaptrans.jpg", 
+            sora.planets.earth.urlToImagesFromIndex + "earthcloudmaptrans.jpg",
             sora.planets.earth.urlToImagesFromIndex + "earthcloudmap.jpg");
     }
 };

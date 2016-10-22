@@ -15,7 +15,7 @@ sora.shader = {
     /**
      * Creates the atmosphere material.
      */
-    createAtmosphereMaterial: function() {
+    createAtmosphereMaterial: function () {
         var vertexShader = [
             "varying vec3 vVertexWorldPosition;",
             "varying vec3 vVertexNormal;",
@@ -28,7 +28,7 @@ sora.shader = {
             "	// set gl_Position",
             "	gl_Position	= projectionMatrix * modelViewMatrix * vec4(position, 1.0);",
             "}"
-            ].join("\n");
+        ].join("\n");
 
         var fragmentShader = [
             "uniform vec3 glowColor;",
@@ -50,24 +50,24 @@ sora.shader = {
         // Create custom material from the shader code above.
         // Those values are just defaults and not final. They are changed by the code later.
         var material = new THREE.ShaderMaterial({
-            uniforms: { 
+            uniforms: {
                 coeficient: {
-                    type	: "f", 
-                    value	: 1.0
+                    type: "f",
+                    value: 1.0
                 },
                 power: {
-                    type	: "f",
-                    value	: 2.0
+                    type: "f",
+                    value: 2.0
                 },
                 glowColor: {
-                    type	: "c",
-                    value	: new THREE.Color("blue")
+                    type: "c",
+                    value: new THREE.Color("blue")
                 },
             },
-            vertexShader	: vertexShader,
-            fragmentShader	: fragmentShader,
-            transparent	    : true,
-            depthWrite	    : false,
+            vertexShader: vertexShader,
+            fragmentShader: fragmentShader,
+            transparent: true,
+            depthWrite: false,
         });
 
         return material;
