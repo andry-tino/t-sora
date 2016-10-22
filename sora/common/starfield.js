@@ -19,7 +19,9 @@ sora.starfield = {
      * Creates the starfield mesh.
      */
     createMesh: function() {
-        var texture	= THREE.ImageUtils.loadTexture(sora.starfield.urlToImagesFromIndex + "galaxy_starfield.png");
+        var loader = new THREE.TextureLoader();
+        var texture	= loader.load(sora.starfield.urlToImagesFromIndex + "galaxy_starfield.png");
+        
         var material = new THREE.MeshBasicMaterial({
             map	    : texture,
             side    : THREE.BackSide

@@ -29,12 +29,12 @@ sora.planets.earth = {
         var geometry = new THREE.SphereGeometry(0.5, 32, 32); /* (radius, segmentWidth, segmentHeight) */
 
         // Define material
+        var loader = new THREE.TextureLoader();
         var material = new THREE.MeshPhongMaterial({
-            map         : THREE.ImageUtils.loadTexture(sora.planets.earth.urlToImagesFromIndex + "earthmap1k.jpg"),
-            bumpMap	    : THREE.ImageUtils.loadTexture(sora.planets.earth.urlToImagesFromIndex + "earthbump1k.jpg"),
+            map         : loader.load(sora.planets.earth.urlToImagesFromIndex + "earthmap1k.jpg"),
+            bumpMap	    : loader.load(sora.planets.earth.urlToImagesFromIndex + "earthbump1k.jpg"),
             bumpScale   : 0.05, /* Bump scale factor */
-            specularMap : THREE.ImageUtils.loadTexture(sora.planets.earth.urlToImagesFromIndex + "earthspec1k.jpg"),
-            specularMap : new THREE.Color("grey")
+            specularMap : loader.load(sora.planets.earth.urlToImagesFromIndex + "earthspec1k.jpg")
         });
 
         // Generate final mesh
@@ -52,9 +52,10 @@ sora.planets.earth = {
         var geometry = new THREE.SphereGeometry(0.5, 32, 32); /* (radius, segmentWidth, segmentHeight) */
 
         // Define material
+        var loader = new THREE.TextureLoader();
         var material = new THREE.MeshPhongMaterial({
-            map	        : THREE.ImageUtils.loadTexture(sora.planets.earth.urlToImagesFromIndex + "moonmap1k.jpg"),
-            bumpMap	    : THREE.ImageUtils.loadTexture(sora.planets.earth.urlToImagesFromIndex + "moonbump1k.jpg"),
+            map	        : loader.load(sora.planets.earth.urlToImagesFromIndex + "moonmap1k.jpg"),
+            bumpMap	    : loader.load(sora.planets.earth.urlToImagesFromIndex + "moonbump1k.jpg"),
             bumpScale   : 0.002 /* Bump scale factor */
         });
 

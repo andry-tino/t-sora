@@ -15,7 +15,7 @@ window.addEventListener("load", function () {
 	// We make the render fill the all window
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.body.appendChild(renderer.domElement);
-	renderer.shadowMapEnabled = true;
+	renderer.shadowMap.enabled = true;
 
 	// This array will memorize important information for later
 	var onRenderFcts = [];
@@ -39,17 +39,16 @@ window.addEventListener("load", function () {
 	light.position.set(5, 5, 5);
 	scene.add(light);
 	light.castShadow = true;
-	light.shadowCameraNear = 0.01;
-	light.shadowCameraFar = 15;
-	light.shadowCameraFov = 45;
-	light.shadowCameraLeft = -1;
-	light.shadowCameraRight = 1;
-	light.shadowCameraTop = 1;
-	light.shadowCameraBottom = -1;
-	light.shadowBias = 0.001;
-	light.shadowDarkness = 0.2;
-	light.shadowMapWidth = 1024;
-	light.shadowMapHeight = 1024;
+	light.shadow.camera.near = 0.01;
+	light.shadow.camera.far = 15;
+	light.shadow.camera.fov = 45;
+	light.shadow.camera.left = -1;
+	light.shadow.camera.right = 1;
+	light.shadow.camera.top = 1;
+	light.shadow.camera.bottom = -1;
+	light.shadow.bias = 0.001;
+	light.shadow.mapSize.width = 1024;
+	light.shadow.mapSize.height = 1024;
 
 	// Add startfield
 	var starSphere = sora.starfield.createMesh();
