@@ -18,7 +18,7 @@ window.addEventListener("load", function () {
 	renderer.shadowMap.enabled = true;
 
 	// This array will memorize important information for later
-	var onRenderFcts = [];
+	var animations = [];
 
 	// Creating the scene and a camera
 	var scene = new THREE.Scene();
@@ -73,7 +73,7 @@ window.addEventListener("load", function () {
 	earthMesh.receiveShadow = true;
 	earthMesh.castShadow = true;
 	containerEarth.add(earthMesh);
-	onRenderFcts.push(function (delta, now) {
+	animations.push(function (delta, now) {
 		earthMesh.rotation.y += 1 / 32 * delta;
 	});
 
@@ -102,7 +102,7 @@ window.addEventListener("load", function () {
 	earthCloud.receiveShadow = true;
 	earthCloud.castShadow = true;
 	containerEarth.add(earthCloud);
-	onRenderFcts.push(function (delta, now) {
+	animations.push(function (delta, now) {
 		earthCloud.rotation.y += 1 / 8 * delta;
 	})
 
@@ -112,17 +112,17 @@ window.addEventListener("load", function () {
 		mouse.x = (event.clientX / window.innerWidth) - 0.5;
 		mouse.y = (event.clientY / window.innerHeight) - 0.5;
 	}, false);
-	onRenderFcts.push(function (delta, now) {
+	animations.push(function (delta, now) {
 		camera.position.x += (mouse.x * 5 - camera.position.x) * (delta * 3);
 		camera.position.y += (mouse.y * 5 - camera.position.y) * (delta * 3);
 		camera.lookAt(scene.position);
 	});
 
 	// Render the scene
-	onRenderFcts.push(function () {
+	animations.push(function () {
 		renderer.render(scene, camera);
-	})
+	});
 
 	// Initiating the animation
-	sora.utils.performAnimation(onRenderFcts);
+	sora.utils.performAnimation(animations);
 });
