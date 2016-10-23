@@ -78,24 +78,24 @@ window.addEventListener("load", function () {
 	});
 
 	// Create the Earth's atmosphere
-	var geometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var material = sora.shader.createAtmosphereMaterial();
-	material.uniforms.glowColor.value.set(0x00b3ff);
-	material.uniforms.coeficient.value = 0.8;
-	material.uniforms.power.value = 2.0;
-	var mesh = new THREE.Mesh(geometry, material);
-	mesh.scale.multiplyScalar(1.01);
-	containerEarth.add(mesh);
+	var innerAtmoGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var innerAtmoMaterial = sora.shader.createAtmosphereMaterial();
+	innerAtmoMaterial.uniforms.glowColor.value.set(0x00b3ff);
+	innerAtmoMaterial.uniforms.coeficient.value = 0.8;
+	innerAtmoMaterial.uniforms.power.value = 2.0;
+	var innerAtmoMesh = new THREE.Mesh(innerAtmoGeometry, innerAtmoMaterial);
+	innerAtmoMesh.scale.multiplyScalar(1.01);
+	containerEarth.add(innerAtmoMesh);
 
-	var geometry = new THREE.SphereGeometry(0.5, 32, 32);
-	var material = sora.shader.createAtmosphereMaterial();
-	material.side = THREE.BackSide;
-	material.uniforms.glowColor.value.set(0x00b3ff);
-	material.uniforms.coeficient.value = 0.5;
-	material.uniforms.power.value = 4.0;
-	var mesh = new THREE.Mesh(geometry, material);
-	mesh.scale.multiplyScalar(1.15);
-	containerEarth.add(mesh);
+	var outerAtmoGeometry = new THREE.SphereGeometry(0.5, 32, 32);
+	var outerAtmoMaterial = sora.shader.createAtmosphereMaterial();
+	outerAtmoMaterial.side = THREE.BackSide;
+	outerAtmoMaterial.uniforms.glowColor.value.set(0x00b3ff);
+	outerAtmoMaterial.uniforms.coeficient.value = 0.5;
+	outerAtmoMaterial.uniforms.power.value = 4.0;
+	var outerAtmoMesh = new THREE.Mesh(outerAtmoGeometry, outerAtmoMaterial);
+	outerAtmoMesh.scale.multiplyScalar(1.15);
+	containerEarth.add(outerAtmoMesh);
 
 	// Create clouds
 	var earthCloud = sora.planets.earth.createCloudMesh();
